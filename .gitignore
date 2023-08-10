@@ -1,3 +1,9 @@
 bin
 lib
 pyvenv.cfg
+include
+
+app/app/__pycache__/*
+app/db.sqlite3
+
+.env
