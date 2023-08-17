@@ -1,7 +1,7 @@
 from django.db import models
 from album.models import Album
 
-from user.models import User
+from django.contrib.auth.models import User
 
 # Create your models here.
 
