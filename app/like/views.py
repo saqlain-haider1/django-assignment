@@ -14,9 +14,10 @@ from django.contrib.auth.models import User
 @permission_classes([IsAuthenticated])
 def like_song(request, song_id):
     song = Song.objects.get(id=song_id)
-    user = User.objects.get(username=request.user.username)
+    user = request.user
     # TODO: Check if the user has already liked the song
-
+    if Like.objects.filter(user=user, song=song).exists():
+        return Response({"message": "You've already liked this song"}, status=status.HTTP_400_BAD_REQUEST)
     like = Like(song=song, user=user)
     like.save()
 
