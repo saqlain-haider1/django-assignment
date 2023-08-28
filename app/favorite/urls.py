@@ -1,5 +1,7 @@
 from django.urls import path
-from .views import add_sonsg_to_favorite
+from .views import (
+    AddSongToFavoriteView
+)
 urlpatterns = [
-    path('<int:song_id>/', add_sonsg_to_favorite, name='add_sonsg_to_favorites'),
+    path('<int:song_id>/', AddSongToFavoriteView.as_view(), name='add_sonsg_to_favorites'),
 ]

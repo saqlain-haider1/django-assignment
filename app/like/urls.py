@@ -1,5 +1,7 @@
 from django.urls import path
-from .views import like_song
+from .views import (
+    LikeSongView
+)
 urlpatterns = [
-    path('<int:song_id>/', like_song, name='like_song'),
+    path('<int:song_id>/', LikeSongView.as_view(), name='like_song'),
 ]

@@ -1,10 +1,12 @@
 from django.urls import path
 from .views import (
-    get_all_songs,
-    search_filter_songs,
+    SongList,
+    SongSearchFilterView,
+    # search_filter_songs,
 )
 
 urlpatterns = [
-    path('', get_all_songs, name='get_all_songs'),
-    path('search/', search_filter_songs, name='search_filter_songs'),
+    path('', SongList.as_view(), name='get_all_songs'),
+    path('search/', SongSearchFilterView.as_view(), name='search_filter_songs'),
+
 ]
