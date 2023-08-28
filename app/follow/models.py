@@ -7,6 +7,6 @@ from django.contrib.auth.models import User
 
 
 class Follow(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
-    album = models.ForeignKey(Album, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
+    album = models.ForeignKey(Album, on_delete=models.CASCADE, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
