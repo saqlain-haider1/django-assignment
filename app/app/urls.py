@@ -25,5 +25,6 @@ urlpatterns = [
     path('api/album/', include('album.urls')),
     path('api/comment/', include('comment.urls')),
     path('api/follow/', include('follow.urls')),
+    path('api/tag/', include('tag.urls')),
 
 ]
