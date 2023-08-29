@@ -58,7 +58,7 @@ REST_FRAMEWORK = {
         'rest_framework_simplejwt.authentication.JWTAuthentication',
     ),
 }
-JWT_AUTH = {
+JWTAuthentication = {
     # how long the original token is valid for
     'JWT_EXPIRATION_DELTA': datetime.timedelta(days=2),
 

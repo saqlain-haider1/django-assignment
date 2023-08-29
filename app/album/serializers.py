@@ -6,7 +6,8 @@ from .models import Album
 class AlbumSerializer(serializers.ModelSerializer):
 
     # owner = serializers.CharField(source='owner.name', read_only=True)
-    owner = serializers.ReadOnlyField(source='owner.username')
+    # owner = serializers.ReadOnlyField(source='owner.username')
+    owner = serializers.PrimaryKeyRelatedField(allow_null=True, default=None, read_only=True)
 
     class Meta:
         model = Album

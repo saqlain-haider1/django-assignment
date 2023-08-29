@@ -23,4 +23,7 @@ urlpatterns = [
     path('api/like/', include('like.urls')),
     path('api/favorite/', include('favorite.urls')),
     path('api/album/', include('album.urls')),
+    path('api/comment/', include('comment.urls')),
+    path('api/follow/', include('follow.urls')),
+
 ]

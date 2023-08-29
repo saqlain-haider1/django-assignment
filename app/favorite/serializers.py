@@ -5,4 +5,4 @@ from .models import Favorite
 class FavoriteSerializer(serializers.ModelSerializer):
     class Meta:
         model = Favorite
-        exclude = ['user', 'song']
+        fields = '__all__'
