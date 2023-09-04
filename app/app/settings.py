@@ -47,7 +47,6 @@ INSTALLED_APPS = [
     'like',
     'song',
     'tag',
-    'user',
     'rest_framework',
     'rest_framework_simplejwt',
     'authentication',
