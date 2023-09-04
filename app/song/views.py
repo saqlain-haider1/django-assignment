@@ -44,5 +44,13 @@ class ScheduleSongView(APIView):
     def post(self, request, *args, **kwargs):
         song_id = self.kwargs['song_id']
         song = get_object_or_404(Song, pk=song_id)
+
         if song:
-            return Response({"message": "Song added to scheduled songs list."}, status=status.HTTP_201_CREATED)
+            release_date = self.request.data.get('release_date')
+
+            if release_date:
+                song.release_date = release_date
+                song.save()
+                return Response({"message": f"Song successfully scheduled for {release_date}"}, status=status.HTTP_200_OK)
+            else:
+                return Response({"message": "Invalid release_date data"}, status=status.HTTP_400_BAD_REQUEST)
