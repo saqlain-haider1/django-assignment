@@ -15,8 +15,19 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 
+from like_favorite.views import AddSongToFavoriteView, LikeSongView
+from .views import home
 urlpatterns = [
+    path('', home, name='home'),
     path('admin/', admin.site.urls),
+    path('api/auth/', include('authentication.urls')),
+    path('api/songs/', include('song.urls')),
+    path('api/album/', include('album.urls')),
+    path('api/like/<int:song_id>/', LikeSongView.as_view()),
+    path('api/favorite/<int:song_id>/', AddSongToFavoriteView.as_view()),
+    path('api/comment/', include('comment.urls')),
+    path('api/follow/', include('follow.urls')),
+    path('api/tag/', include('tag.urls')),
 ]
