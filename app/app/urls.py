@@ -22,8 +22,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/auth/', include('authentication.urls')),
     path('api/songs/', include('song.urls')),
-    path('api/like/', include('like.urls')),
-    path('api/favorite/', include('favorite.urls')),
     path('api/album/', include('album.urls')),
     path('api/comment/', include('comment.urls')),
     path('api/follow/', include('follow.urls')),

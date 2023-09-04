@@ -10,7 +10,6 @@ class Migration(migrations.Migration):
 
     dependencies = [
         ('song', '0001_initial'),
-        ('user', '0001_initial'),
     ]
 
     operations = [
